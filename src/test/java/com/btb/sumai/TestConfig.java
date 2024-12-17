@@ -5,6 +5,7 @@ import dev.langchain4j.model.ollama.OllamaChatModel;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.test.context.TestPropertySource;
 import org.testcontainers.containers.BindMode;
 import org.testcontainers.ollama.OllamaContainer;
 import org.testcontainers.shaded.org.apache.commons.io.FileUtils;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 @TestConfiguration
+@TestPropertySource(locations = "classpath:application-test.yaml")
 public class TestConfig {
 
     public static final String MODEL_NAME = "tinyllama";

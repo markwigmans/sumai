@@ -5,9 +5,8 @@ import dev.langchain4j.model.openai.OpenAiChatModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 
-@Configuration(proxyBeanMethods=false)
+@Configuration(proxyBeanMethods = false)
 public class PerplexityChatModelConfig {
     @Value("${perplexity.base-url:https://api.perplexity.ai}")
     private String baseURL;
@@ -19,7 +18,6 @@ public class PerplexityChatModelConfig {
     private String apiKey;
 
     @Bean
-    @Lazy
     public ChatLanguageModel perplexityChatModel() {
         return OpenAiChatModel.builder()
                 .apiKey(apiKey)
