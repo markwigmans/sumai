@@ -1,3 +1,5 @@
 spring.main.allow-bean-definition-overriding: true
 
 perplexity.api-key: test-value
+
+logging.level.root: info

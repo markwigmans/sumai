@@ -38,12 +38,14 @@ public class TestConfig {
 
     @Bean
     @Primary
-    public ChatLanguageModel ollamaChatModel(OllamaContainer ollama) {
+    public ChatLanguageModel ollamaTestChatModel(OllamaContainer ollama) {
         return OllamaChatModel.builder()
                 .baseUrl(ollama.getEndpoint())
                 .modelName(MODEL_NAME)
                 .temperature(0.0)
                 .timeout(Duration.ofMinutes(5))
+                .logRequests(true)
+                .logResponses(true)
                 .build();
     }
 }
